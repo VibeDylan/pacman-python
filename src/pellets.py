@@ -5,7 +5,7 @@ import numpy as np
 
 class Pellet(object):
     def __init__(self, row, column):
-        self.name = "PELLET"
+        self.name = PELLET
         self.position = Vector2(column*TILEWIDTH, row*TILEHEIGHT)
         self.color = WHITE
         self.radius = int(4 * TILEWIDTH / 16)
@@ -17,6 +17,7 @@ class Pellet(object):
         if self.visible:
             p = self.position.asInt()
             pygame.draw.circle(screen, self.color, p, self.radius)
+
 
 class PowerPellet(Pellet):
     def __init__(self, row, column):
@@ -32,7 +33,9 @@ class PowerPellet(Pellet):
         if self.timer >= self.flashTime:
             self.visible = not self.visible
             self.timer = 0
-            
+
+
+
 class PelletGroup(object):
     def __init__(self, pelletfile):
         self.pelletList = []
