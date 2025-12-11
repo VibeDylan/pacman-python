@@ -1,4 +1,5 @@
 from entity import Entity
+from vector import Vector2
 
 
 class Ghost(Entity):
@@ -6,3 +7,5 @@ class Ghost(Entity):
         Entity.__init__(self, node)
         self.name = "GHOST"
         self.points = 200
+        self.goal = Vector2()
+        self.directionMethod = self.goalDirection
