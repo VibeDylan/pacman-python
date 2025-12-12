@@ -47,6 +47,8 @@ class GameController(object):
         if pellet:
             self.pellets.numEaten += 1
             self.pellets.pelletList.remove(pellet)
+            if pellet.name == POWERPELLET:
+                self.ghost.startFreight()
 
     def render(self):
         self.screen.blit(self.background, (0, 0))
